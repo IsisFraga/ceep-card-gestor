@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .cabecalho {
+            background: #fbf300;
+        }
+
+        .titulo {
+            background: blue;
+            width: 100vw;
+            font-size: 10vh;
+        }
+
+        .item {
+            flex-grow: 1;
+        }
+
+
+        @media screen and (min-width: 800px) {
+            .cabecalho {
+                background: rgb(255,0,0);
+            }
+
+            .titulo {
+                width: 50vw;
+                font-size: 20vh;
+            }
+
+            .lista {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .item:nth-child(2n) {
+                background: orange;
+                flex-grow: 3;
+            }
+            
+            .lista-alterada{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body> 
+    <header class="cabecalho"> 
+        <h1 class="titulo">Ceep</h1>
+        <nav>
+            <button class="ativado">Linhas</button>
+            <ul class="lista">
+                <li class="item">Item 1</li>
+                <li class="item">Item 2</li>
+                <li class="item">Item 3</li>
+                <li class="item">Item 4</li>
+                <li class="item">Item 5</li>
+                <li class="item">Item 6</li>
+                <li class="item">Item 7</li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        var lista = document.querySelector(".lista");
+
+        var ativado = document.querySelector(".ativado");
+
+        ativado.addEventListener("click", function(){
+            lista.classList.toggle("lista-alterada")
+        })
+
+        var itens = document.querySelectorAll(".item")
+
+        for(var i=0; i < itens.length; i++){
+            itens[i].addEventListener("click", function(){
+                alert(this.textContent)
+            })
+        }
+
+        // function trocaVisual() {
+        //    lista.classList.toggle("lista-alterada")
+        //     // if(lista.classList.contains("lista-alterada")){
+        //     //     lista.classList.remove("lista-alterada");
+        //     // } else {
+        //     //     lista.classList.add("lista-alterada");
+        //     // }
+        // };
+
+        // ativado.addEventListener = ("click", trocaVisual);
+    </script>    
+</body>
+</html>
