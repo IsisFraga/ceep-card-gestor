@@ -24,7 +24,7 @@
         } else {
             adicionaCartaoNoMural({ conteudo: textarea.value });
         }
-        // apaga o conteúdo do textarea
+        // apaga o conteúdo do textarea 
         textarea.value = "";
     });
     form.classList.remove("no-js");
